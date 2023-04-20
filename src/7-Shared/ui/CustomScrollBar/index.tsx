@@ -42,7 +42,7 @@ const CustomScrollBar: React.FC<IScrollBar> = ({component}) => {
         />
       )}
     >
-      <div className="scrollbar-custom" style={{ padding: "0 24px 12px 0" }}>
+      <div className="scrollbar-custom" style={{ padding: "0" }}>
       {component()}
       </div>
     </Scrollbars>
