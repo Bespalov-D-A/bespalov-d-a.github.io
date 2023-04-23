@@ -1,15 +1,17 @@
-import useTheme from '@mui/material/styles/useTheme';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Context, useContext, useEffect, useRef, useState } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { InewTheme } from '../../assets/mui/WithTheme';
 
 interface IScrollBar {
   component: () => React.ReactElement;
 }
 
+export const ThemeContext = React.createContext<InewTheme | null>(null);
+
 //Кастомный скролбар, для компонентов с прокруткой
 //Подстраивается под размер родителя
 const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
-  const theme = useTheme();
+  const theme = useContext<InewTheme | null>(ThemeContext);
   const [update, setUpdate] = useState<boolean>(false);
   const scrollbarsRef = useRef<Scrollbars>(null);
 
@@ -26,7 +28,7 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
 
   return (
     <Scrollbars
-      //onUpdate={() => setUpdate(true)}
+      onUpdate={() => setUpdate(true)}
       ref={scrollbarsRef}
       autoHide={false}
       style={{ width: '100%', height: '100%' }}
@@ -35,7 +37,7 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
           {...props}
           style={{
             ...style,
-            backgroundColor: theme.palette.secondary.dark,
+            backgroundColor: theme?.palette?.neutral.dark,
             position: 'relative',
             zIndex: 10,
             opacity: '0.7',
