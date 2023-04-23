@@ -1,15 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
-import { ScrollbarProps, Scrollbars } from "react-custom-scrollbars";
-import { theme } from "../../assets/mui/WithTheme";
+import useTheme from '@mui/material/styles/useTheme';
+import React, { useEffect, useRef, useState } from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 interface IScrollBar {
-  component: ()=> React.ReactElement
+  component: () => React.ReactElement;
 }
 
 //Кастомный скролбар, для компонентов с прокруткой
 //Подстраивается под размер родителя
-const CustomScrollBar: React.FC<IScrollBar> = ({component}) => {
-  const [update, setUpdate] = useState<boolean>(false)
+const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
+  const theme = useTheme();
+  const [update, setUpdate] = useState<boolean>(false);
   const scrollbarsRef = useRef<Scrollbars>(null);
 
   function scrollTo() {
@@ -20,31 +21,29 @@ const CustomScrollBar: React.FC<IScrollBar> = ({component}) => {
   }
 
   useEffect(() => {
-      if(!update) scrollTo()
+    if (!update) scrollTo();
   }, [update]);
 
   return (
     <Scrollbars
-      onUpdate={()=>setUpdate(true)}
+      //onUpdate={() => setUpdate(true)}
       ref={scrollbarsRef}
       autoHide={false}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: '100%', height: '100%' }}
       renderThumbVertical={(style, ...props) => (
         <div
           {...props}
           style={{
             ...style,
             backgroundColor: theme.palette.secondary.dark,
-            position: "relative",
+            position: 'relative',
             zIndex: 10,
-            opacity: "0.7",
+            opacity: '0.7',
           }}
         />
       )}
     >
-      <div className="scrollbar-custom" style={{ padding: "0" }}>
       {component()}
-      </div>
     </Scrollbars>
   );
 };

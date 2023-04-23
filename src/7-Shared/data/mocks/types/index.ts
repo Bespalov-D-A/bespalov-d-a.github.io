@@ -37,71 +37,67 @@ export interface ImockTransactionsItem {
   cost: string;
 }
 
-export type ImockTransactions = ImockTransactionsItem[]
+export type ImockTransactions = ImockTransactionsItem[];
 
 export interface ImockBarDataItem {
-country: string,
-    "hot dog": number,
-    "hot dogColor": string,
-    burger: number,
-    burgerColor: string,
-    kebab: number,
-    kebabColor: string,
-    donut: number,
-    donutColor: string,
+  country: string;
+  "hot dog": number;
+  "hot dogColor": string;
+  burger: number;
+  burgerColor: string;
+  kebab: number;
+  kebabColor: string;
+  donut: number;
+  donutColor: string;
 }
 
-export type ImockBarData = ImockBarDataItem[]
+export type ImockBarData = ImockBarDataItem[];
 
 export interface ImockPieDataItem {
-    id: string,
-    label: string,
-    value: number,
-    color: string
+  id: string;
+  label: string;
+  value: number;
+  color: string;
 }
 
-export type ImockPieData = ImockPieDataItem[]
+export type ImockPieData = ImockPieDataItem[];
 
 export interface Ipoint {
-    x: string,
-    y: number
+  x: string;
+  y: number;
 }
 
 export interface ImockLineDataItem {
-    id: string,
-    color: string,
-    data: Ipoint[]
+  id: string;
+  color: string;
+  data: Ipoint[];
 }
 
-export type ImockLineDate = ImockLineDataItem[]
+export type ImockLineDate = ImockLineDataItem[];
 
 export interface ImockGeographDataItem {
-    id: string,
-    value: number
+  id: string;
+  value: number;
 }
 
-export type ImockGeographData = ImockGeographDataItem[]
-
-export interface Icoordinates {
-    coordinates: Array<Array<number[]>>
-}
+export type ImockGeographData = ImockGeographDataItem[];
 
 export interface IfeatureItem {
-    type: string,
-    properties: {
-        name: string,
-        [key: string]: string
-    },
-    geometry: {
-        type: string,
-        coordinates: Icoordinates[]
-    },
-    id: string
+  type: string;
+  properties: {
+    name: string;
+    [key: string]: string;
+  };
+  geometry: {
+    type: string;
+    coordinates: number[][][] | number[][][][];
+  };
+  id: string;
 }
 
-export type Ifeatures = IfeatureItem[]
+export type Ifeatures = IfeatureItem[];
 
 export interface IgeoFeatures {
-    type: string,
-    features: Ifeatures
+  type: string;
+  features: Ifeatures;
 }

@@ -1,17 +1,20 @@
-import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
-import { theme } from "../../../7-Shared/assets/mui/WithTheme";
-import React, { FC } from "react";
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import React, { FC } from 'react';
+import { useThemeState } from '../../../6-Entities/Common';
+import { choiceTheme } from '../../../7-Shared/lib/ChoiceTheme';
 
 interface IWithStyled {
-  component: React.ReactNode
+  component: React.ReactNode;
 }
 
 //импортируем кастомизированную тему, оборачиваем ей приложение
-//Оборачиваем приложение StyledEngine что бы css был выше mui cssInJs
-export const WithMuiStyled: React.FC<IWithStyled> = ({component}) => {
-return <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>{component}</ThemeProvider>
-    </StyledEngineProvider>
-}
+//Оборачиваем приложение StyledEngine что бы css был выше mui cssInJ
+export const WithMuiStyled: React.FC<IWithStyled> = ({ component }) => {
+  const theme = useThemeState((state) => state.token);
 
-  
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={choiceTheme(theme)}>{component}</ThemeProvider>
+    </StyledEngineProvider>
+  );
+};
