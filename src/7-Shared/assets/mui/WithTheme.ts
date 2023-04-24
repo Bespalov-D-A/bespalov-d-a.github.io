@@ -57,6 +57,7 @@ export const mainTheme = (token: 'dark' | 'light'): InewTheme => {
   let theme = createTheme({
     typography,
     palette: {
+      mode: token,
       primary: {
         main: colors.primary[500],
       },
