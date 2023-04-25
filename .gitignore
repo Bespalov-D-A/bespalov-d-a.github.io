@@ -5,6 +5,12 @@
 /.pnp
 .pnp.js
 
+.ts.swp
+.tsx.swp
+.css.swp
+.scss.swp
+.js.swp
+.jsx.swp
 .swp
 
 # testing
