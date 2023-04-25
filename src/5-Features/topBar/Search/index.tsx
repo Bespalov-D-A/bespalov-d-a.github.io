@@ -13,13 +13,11 @@ const Search: React.FC<ISearch> = (props) => {
   const colors = getColors(token);
 
   return (
-    <Box>
-      <Box style={{ backgroundColor: colors.primary[400] }}>
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-      </Box>
+    <Box style={{ backgroundColor: colors.primary[400] }}>
+      <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+      <IconButton>
+        <SearchIcon />
+      </IconButton>
     </Box>
   );
 };

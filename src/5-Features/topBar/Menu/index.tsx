@@ -1,3 +1,4 @@
+import s from './index.module.scss';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import React from 'react';
@@ -15,7 +16,7 @@ const Menu: React.FC<IMenu> = (props) => {
   const colorMode = useThemeState((state) => state.token);
 
   return (
-    <Box>
+    <Box className={s.main}>
       <IconButton>
         <NotificationsNoneIcon />
       </IconButton>
@@ -29,7 +30,7 @@ const Menu: React.FC<IMenu> = (props) => {
       </IconButton>
 
       <IconButton onClick={() => setColorMode()}>
-        {colorMode === 'dark' ? <NightlightIcon /> : <LightModeIcon />}
+        {colorMode === 'light' ? <NightlightIcon /> : <LightModeIcon />}
       </IconButton>
     </Box>
   );

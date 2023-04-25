@@ -1,6 +1,6 @@
 import { createTheme, Theme } from '@mui/material/styles';
 import { CSSProperties } from '@mui/material/styles/createTypography';
-import getColors from '../../lib/GetColors';
+import getColors, { IExportColors } from '../../lib/GetColors';
 
 interface Itypography extends CSSProperties {
   fontFamily: string;
@@ -49,6 +49,7 @@ export interface InewTheme extends Theme {
       main: string;
       light: string;
     };
+    additionalColors: IExportColors;
   } & Theme['palette'];
 }
 
@@ -78,6 +79,7 @@ export const mainTheme = (token: 'dark' | 'light'): InewTheme => {
         main: colors.grey[500],
         light: colors.grey[100],
       },
+      additionalColors: colors,
     },
   };
   return newTheme;
