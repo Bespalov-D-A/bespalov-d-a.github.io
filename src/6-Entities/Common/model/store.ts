@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware';
 
 interface IthemeState {
   token: 'dark' | 'light';
-  setToken: (token: 'dark' | 'light') => void;
+  setToken: (token?: 'dark' | 'light') => void;
 }
 
 export const useThemeState = create<IthemeState>()(
@@ -13,7 +13,11 @@ export const useThemeState = create<IthemeState>()(
       token: 'light',
       setToken: (token) =>
         set((state) => {
-          state.token = token;
+          state.token = token
+            ? token
+            : state.token === 'light'
+            ? 'dark'
+            : 'light';
         }),
     })),
     {

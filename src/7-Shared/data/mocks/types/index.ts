@@ -10,7 +10,7 @@ export interface ImockDataTeamItem {
 export type ImockDataTeam = ImockDataTeamItem[];
 
 export interface ImockDataContactsItem
-  extends Omit<ImockDataTeamItem, "access"> {
+  extends Omit<ImockDataTeamItem, 'access'> {
   address: string;
   city: string;
   zipCode: string;
@@ -41,8 +41,8 @@ export type ImockTransactions = ImockTransactionsItem[];
 
 export interface ImockBarDataItem {
   country: string;
-  "hot dog": number;
-  "hot dogColor": string;
+  'hot dog': number;
+  'hot dogColor': string;
   burger: number;
   burgerColor: string;
   kebab: number;

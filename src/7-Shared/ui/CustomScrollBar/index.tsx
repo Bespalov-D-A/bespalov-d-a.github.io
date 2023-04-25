@@ -1,4 +1,4 @@
-import React, { Context, useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { InewTheme } from '../../assets/mui/WithTheme';
 

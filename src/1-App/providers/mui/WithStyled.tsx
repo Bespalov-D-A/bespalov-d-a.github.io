@@ -1,8 +1,8 @@
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import React from 'react';
-import { useThemeState } from '../../../6-Entities/Common';
+import { useThemeState } from '../../../6-Entities/Common/model/store';
 import { InewTheme } from '../../../7-Shared/assets/mui/WithTheme';
-import {ThemeContext} from '../../../7-Shared/ui/CustomScrollBar';
+import { ThemeContext } from '../../../7-Shared/ui/CustomScrollBar';
 import { useMainTheme } from './hooks/useMainTheme';
 
 interface IWithStyled {
