@@ -1,4 +1,4 @@
-import { IgeoFeatures } from './types';
+import { IgeoFeatures } from './../../types';
 
 export const geoFeatures: IgeoFeatures = {
   type: 'FeatureCollection',

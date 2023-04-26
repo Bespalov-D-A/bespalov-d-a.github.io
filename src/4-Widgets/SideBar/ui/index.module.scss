@@ -1,0 +1,14 @@
+.sidebar {
+  .pro-inner-icon {
+    background: trasparent !important;
+  }
+  .pro-inner-item {
+    padding: 5px 35px 5px 20px;
+  }
+  .pro-inner-item: hover {
+    color: #868dfb !important;
+  }
+  .pro-menu-item.active {
+    color: #6870fa !important;
+  }
+}

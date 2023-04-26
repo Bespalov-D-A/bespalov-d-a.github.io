@@ -7,7 +7,7 @@ import {
   ImockLineDate,
   ImockPieData,
   ImockTransactions,
-} from './types';
+} from './../../types';
 
 export const mockDataTeam: ImockDataTeam = [
   {
