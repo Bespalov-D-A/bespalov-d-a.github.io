@@ -3,17 +3,19 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { useThemeState } from '../../../6-Entities/Common/model/store';
-import getColors from '../../../7-Shared/lib/GetColors';
+import useTheme from '@mui/material/styles/useTheme';
+import { InewTheme } from '../../../7-Shared/assets/mui/WithTheme';
 
 interface ISearch {}
 
 const Search: React.FC<ISearch> = (props) => {
-  const token = useThemeState((state) => state.token);
-  const colors = getColors(token);
+  const theme = useTheme() as InewTheme;
+  console.log(theme);
 
   return (
-    <Box style={{ backgroundColor: colors.primary[400] }}>
+    <Box
+      style={{ backgroundColor: theme.palette.additionalColors.primary[400] }}
+    >
       <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
       <IconButton>
         <SearchIcon />

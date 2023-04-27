@@ -60,13 +60,13 @@ export const mainTheme = (token: 'dark' | 'light'): InewTheme => {
     palette: {
       mode: token,
       primary: {
-        main: colors.primary[500],
+        main: token === 'dark' ? colors.primary[500] : colors.primary[100],
       },
       secondary: {
         main: colors.greenAccent[500],
       },
       background: {
-        default: colors.primary[500],
+        default: token === 'dark' ? colors.primary[600] : '#fcfcfc',
       },
     },
   });
@@ -82,5 +82,6 @@ export const mainTheme = (token: 'dark' | 'light'): InewTheme => {
       additionalColors: colors,
     },
   };
+  console.log(newTheme);
   return newTheme;
 };

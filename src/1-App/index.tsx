@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { withProviders } from './providers';
-import './styles/index.scss';
 import { Outlet } from 'react-router-dom';
+import './styles/index.scss';
 
 //Входная точка приложения
 const App: FC = () => {

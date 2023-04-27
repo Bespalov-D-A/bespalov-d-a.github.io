@@ -5,9 +5,6 @@ interface ISkeleton {
   component: () => any;
 }
 
-//Компонент-заглушка для отображения серого,
-//мерациющего пространства пока элемент не загружен
-//componentIsReady: true || false
 const SkeletonComp: React.FC<ISkeleton> = ({ isLoad, component }) => {
   console.log(component());
   return (

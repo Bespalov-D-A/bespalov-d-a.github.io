@@ -1,6 +1,11 @@
+.user {
+  text-align: center;
+}
+
 .photo-block {
   width: 100px;
   height: 100px;
+  margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
 }

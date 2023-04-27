@@ -7,10 +7,15 @@ import { useLoader } from '../../../../6-Entities/Common/model/hooks';
 import SetAlert from '../../../../7-Shared/lib/SetAlert';
 import SkeletonComp from '../../../../7-Shared/lib/Skeleton';
 import Photo from './../../../../7-Shared/data/mocks/data/img/photo.jpg';
+import { useThemeState } from '../../../../6-Entities/Common/model/store';
+import getColors from '../../../../7-Shared/lib/GetColors';
+import Skeleton from '@mui/material/Skeleton';
 
 interface IUserBlock {}
 
 const UserBlock: React.FC<IUserBlock> = (props) => {
+  const token = useThemeState((state) => state.token);
+  const colors = getColors(token);
   const [isFetch, isLoad, error] = useLoader(
     'Ошибка загрузки фото',
     SetAlert,
@@ -24,7 +29,7 @@ const UserBlock: React.FC<IUserBlock> = (props) => {
   }, []);
 
   return (
-    <Box>
+    <Box p={2} className={s.user}>
       <Box className={s['photo-block']}>
         <SkeletonComp
           isLoad={isLoad}
@@ -37,8 +42,12 @@ const UserBlock: React.FC<IUserBlock> = (props) => {
       </Box>
 
       <Box>
-        <Typography> Vasya Pupkin </Typography>
-        <Typography> VP Fancy Admin </Typography>
+        <Typography variant="h2" color={colors.grey[100]} fontWeight="bold">
+          {isLoad ? <Skeleton /> : 'Vasya Pupkin'}
+        </Typography>
+        <Typography variant="h5" color={colors.greenAccent[500]}>
+          {isLoad ? <Skeleton /> : 'VP Fancy Admin'}
+        </Typography>
       </Box>
     </Box>
   );

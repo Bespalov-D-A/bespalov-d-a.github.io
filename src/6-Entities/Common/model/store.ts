@@ -8,21 +8,15 @@ interface IthemeState {
 }
 
 export const useThemeState = create<IthemeState>()(
-  persist(
-    immer((set) => ({
-      token: 'light',
-      setToken: (token) =>
-        set((state) => {
-          state.token = token
-            ? token
-            : state.token === 'light'
-            ? 'dark'
-            : 'light';
-        }),
-    })),
-    {
-      name: 'themeToken',
-      version: 1,
-    }
-  )
+  immer((set) => ({
+    token: 'dark',
+    setToken: (token) =>
+      set((state) => {
+        state.token = token
+          ? token
+          : state.token === 'light'
+          ? 'dark'
+          : 'light';
+      }),
+  }))
 );
