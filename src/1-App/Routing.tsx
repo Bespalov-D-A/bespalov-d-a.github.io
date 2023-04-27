@@ -1,5 +1,5 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./providers/router/WithRouter";
+import { RouterProvider } from 'react-router-dom';
+import { router } from './providers/router/WithRouter';
 
 //Инициализация роутинга приложения
 const Routing = () => {

@@ -1,9 +1,9 @@
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import React from 'react';
-import { useThemeState } from '../../../6-Entities/Common';
+import { useMainTheme } from '../../../6-Entities/Common/model/hooks';
+import { useThemeState } from '../../../6-Entities/Common/model/store';
 import { InewTheme } from '../../../7-Shared/assets/mui/WithTheme';
-import {ThemeContext} from '../../../7-Shared/ui/CustomScrollBar';
-import { useMainTheme } from './hooks/useMainTheme';
+import { ThemeContext } from '../../../7-Shared/ui/CustomScrollBar';
 
 interface IWithStyled {
   component: React.ReactNode;
@@ -17,11 +17,9 @@ export const WithMuiStyled: React.FC<IWithStyled> = ({ component }) => {
 
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <ThemeContext.Provider value={theme as InewTheme}>
-          {component}
-        </ThemeContext.Provider>
-      </ThemeProvider>
+      <ThemeContext.Provider value={theme}>
+        <ThemeProvider theme={theme}>{component}</ThemeProvider>
+      </ThemeContext.Provider>
     </StyledEngineProvider>
   );
 };

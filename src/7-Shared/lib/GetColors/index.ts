@@ -1,4 +1,18 @@
-export const getColors = (mode: 'dark' | 'light') => ({
+type Icolors = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+type IcolorKeys =
+  | 'grey'
+  | 'primary'
+  | 'greenAccent'
+  | 'redAccent'
+  | 'blueAccent';
+
+type IcolorObject = {
+  [key in Icolors]: string;
+};
+
+export type IExportColors = Record<IcolorKeys, IcolorObject>;
+
+const getColors = (mode: 'dark' | 'light'): IExportColors => ({
   ...(mode === 'dark'
     ? {
         grey: {
@@ -115,3 +129,5 @@ export const getColors = (mode: 'dark' | 'light') => ({
         },
       }),
 });
+
+export default getColors;

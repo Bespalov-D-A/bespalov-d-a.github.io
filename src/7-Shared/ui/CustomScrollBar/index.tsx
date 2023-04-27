@@ -1,4 +1,5 @@
-import React, { Context, useContext, useEffect, useRef, useState } from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { InewTheme } from '../../assets/mui/WithTheme';
 
@@ -31,7 +32,10 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
       onUpdate={() => setUpdate(true)}
       ref={scrollbarsRef}
       autoHide={false}
-      style={{ width: '100%', height: '100%' }}
+      style={{
+        width: '100%',
+        height: '100%',
+      }}
       renderThumbVertical={(style, ...props) => (
         <div
           {...props}
@@ -45,7 +49,7 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
         />
       )}
     >
-      {component()}
+      <CssBaseline>{component()}</CssBaseline>
     </Scrollbars>
   );
 };

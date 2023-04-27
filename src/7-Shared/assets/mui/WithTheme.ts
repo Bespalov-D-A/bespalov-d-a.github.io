@@ -1,6 +1,6 @@
 import { createTheme, Theme } from '@mui/material/styles';
 import { CSSProperties } from '@mui/material/styles/createTypography';
-import { getColors } from '../../lib/ExportColors';
+import getColors, { IExportColors } from '../../lib/GetColors';
 
 interface Itypography extends CSSProperties {
   fontFamily: string;
@@ -49,27 +49,28 @@ export interface InewTheme extends Theme {
       main: string;
       light: string;
     };
+    additionalColors: IExportColors;
   } & Theme['palette'];
 }
 
 export const mainTheme = (token: 'dark' | 'light'): InewTheme => {
   const colors = getColors(token);
-  let theme = createTheme({
+  const theme = createTheme({
     typography,
     palette: {
       mode: token,
       primary: {
-        main: colors.primary[500],
+        main: token === 'dark' ? colors.primary[500] : colors.primary[100],
       },
       secondary: {
         main: colors.greenAccent[500],
       },
       background: {
-        default: colors.primary[500],
+        default: token === 'dark' ? colors.primary[600] : '#fcfcfc',
       },
     },
   });
-  let newTheme = {
+  const newTheme = {
     ...theme,
     palette: {
       ...theme.palette,
@@ -78,7 +79,9 @@ export const mainTheme = (token: 'dark' | 'light'): InewTheme => {
         main: colors.grey[500],
         light: colors.grey[100],
       },
+      additionalColors: colors,
     },
   };
+  console.log(newTheme);
   return newTheme;
 };
