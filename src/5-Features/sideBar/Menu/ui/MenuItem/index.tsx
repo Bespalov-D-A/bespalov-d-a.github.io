@@ -1,8 +1,9 @@
 import useTheme from '@mui/material/styles/useTheme';
+import s from './index.module.scss';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { MenuItem } from 'react-pro-sidebar';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { InewTheme } from '../../../../../7-Shared/assets/mui/WithTheme';
 
 interface IItem {
@@ -17,15 +18,16 @@ const Item: React.FC<IItem> = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme() as InewTheme;
   return (
     <MenuItem
-      active={Boolean(selected === title)}
+      active={selected === title}
       style={{
+        position: 'relative',
         color: theme.palette.additionalColors.grey[100],
       }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
       <Typography>{title}</Typography>
-      <Link to={to} />
+      <NavLink className={s.lnk} to={to} />
     </MenuItem>
   );
 };
