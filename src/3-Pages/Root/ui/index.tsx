@@ -3,6 +3,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { SideBar } from '../../../4-Widgets/SideBar';
 import { TopBar } from '../../../4-Widgets/TopBar';
+import CustomScrollBar from '../../../7-Shared/ui/CustomScrollBar';
 
 interface IRootPage {}
 
@@ -13,9 +14,13 @@ const RootPage: React.FC<IRootPage> = (props) => {
         <SideBar />
         <div className="content">
           <TopBar />
-          <Box p={2}>
-            <Outlet />
-          </Box>
+          <CustomScrollBar
+            component={() => (
+              <Box p={2}>
+                <Outlet />
+              </Box>
+            )}
+          />
         </div>
       </main>
     </div>
