@@ -5,6 +5,7 @@
 html,
 body,
 .app,
+.wrap,
 .content,
 #root {
   width: 100%;
@@ -14,11 +15,15 @@ body,
   // -ms-overflow-style: none;
 }
 
-.content {
+.wrap {
   display: flex;
   align-items: flex-start;
 }
 
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+}
 ::-webkit-scrollbar {
   //display: none;
 }

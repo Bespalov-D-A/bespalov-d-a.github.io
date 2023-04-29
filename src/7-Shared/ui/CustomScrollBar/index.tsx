@@ -1,4 +1,4 @@
-import CssBaseline from '@mui/material/CssBaseline';
+import useTheme from '@mui/material/styles/useTheme';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { InewTheme } from '../../assets/mui/WithTheme';
@@ -12,7 +12,7 @@ export const ThemeContext = React.createContext<InewTheme | null>(null);
 //Кастомный скролбар, для компонентов с прокруткой
 //Подстраивается под размер родителя
 const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
-  const theme = useContext<InewTheme | null>(ThemeContext);
+  const theme = useTheme() as InewTheme;
   const [update, setUpdate] = useState<boolean>(false);
   const scrollbarsRef = useRef<Scrollbars>(null);
 
@@ -35,13 +35,14 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
       style={{
         width: '100%',
         height: '100%',
+        flex: 1,
       }}
       renderThumbVertical={(style, ...props) => (
         <div
           {...props}
           style={{
             ...style,
-            backgroundColor: theme?.palette?.neutral.dark,
+            backgroundColor: theme.palette.additionalColors.greenAccent[400],
             position: 'relative',
             zIndex: 10,
             opacity: '0.7',
@@ -49,7 +50,12 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
         />
       )}
     >
-      <CssBaseline>{component()}</CssBaseline>
+      <div
+        className="scrollbar-custom"
+        style={{ height: '100%', padding: '0 8px 0 0' }}
+      >
+        {component()}
+      </div>
     </Scrollbars>
   );
 };
