@@ -11,11 +11,15 @@
   .pro-inner-item {
     padding: 5px 35px 5px 20px;
   }
-  .pro-inner-item: hover {
+  .ps-menu-item-root: hover {
     color: #868dfb !important;
   }
-  .pro-menu-item.active {
+  li > .ps-menu-button.ps-active {
     color: #6870fa !important;
+  }
+  .ps-menu-button:hover {
+    background: transparent !important;
+    color: #868dfb !important;
   }
   .ps-menu-root {
     height: 100%;

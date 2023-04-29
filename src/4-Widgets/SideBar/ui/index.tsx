@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import MenuIcon from '@mui/icons-material/Menu';
 import useTheme from '@mui/material/styles/useTheme';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Menu,
   MenuItem,
@@ -22,7 +22,7 @@ interface ISideBar {}
 const SideBar: React.FC<ISideBar> = (props) => {
   const theme = useTheme() as InewTheme;
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-  const [selected, setSelected] = useState('dashboard');
+  const [selected, setSelected] = useState('Dashboard');
   const { collapseSidebar, collapsed } = useProSidebar();
 
   return (
