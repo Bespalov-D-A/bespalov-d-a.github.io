@@ -7,8 +7,7 @@ import SidebarProvider from './sidebar';
 //композируем все необходимые для приложения провайдеры
 export const withProviders = compose(
   (component: React.ReactNode) => <WithMuiStyled component={component} />,
-  (component: React.ReactNode) => <SidebarProvider component={component} />,
   (component: () => React.ReactElement) => (
-    <CustomScrollBar component={component} />
+    <SidebarProvider component={component} />
   )
 );
