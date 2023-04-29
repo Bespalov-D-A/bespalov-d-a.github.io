@@ -24,12 +24,13 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
   }
 
   useEffect(() => {
-    if (!update) scrollTo();
+    let time = setTimeout(() => scrollTo(), 50);
+    return () => clearTimeout(time);
   }, [update]);
 
   return (
     <Scrollbars
-      onUpdate={() => setUpdate(true)}
+      onUpdate={() => setUpdate(!update)}
       ref={scrollbarsRef}
       autoHide={false}
       style={{
