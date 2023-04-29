@@ -1,8 +1,8 @@
+import CssBaseline from '@mui/material/CssBaseline';
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import React from 'react';
 import { useMainTheme } from '../../../6-Entities/Common/model/hooks';
 import { useThemeState } from '../../../6-Entities/Common/model/store';
-import { InewTheme } from '../../../7-Shared/assets/mui/WithTheme';
 import { ThemeContext } from '../../../7-Shared/ui/CustomScrollBar';
 
 interface IWithStyled {
@@ -18,7 +18,9 @@ export const WithMuiStyled: React.FC<IWithStyled> = ({ component }) => {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeContext.Provider value={theme}>
-        <ThemeProvider theme={theme}>{component}</ThemeProvider>
+        <CssBaseline>
+          <ThemeProvider theme={theme}>{component}</ThemeProvider>
+        </CssBaseline>
       </ThemeContext.Provider>
     </StyledEngineProvider>
   );

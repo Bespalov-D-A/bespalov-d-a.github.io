@@ -17,4 +17,13 @@
   .pro-menu-item.active {
     color: #6870fa !important;
   }
+  .ps-menu-root {
+    height: 100%;
+    ul {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: stretch;
+      height: 100%;
+    }
+  }
 }

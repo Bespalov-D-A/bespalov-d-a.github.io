@@ -15,6 +15,7 @@ import { InewTheme } from '../../../7-Shared/assets/mui/WithTheme';
 import s from './index.module.scss';
 import './index.scss';
 import Top from '../../../5-Features/sideBar/Menu/ui/Top';
+import CustomScrollBar from '../../../7-Shared/ui/CustomScrollBar';
 
 interface ISideBar {}
 
@@ -48,8 +49,16 @@ const SideBar: React.FC<ISideBar> = (props) => {
           >
             {collapsed || <Top />}
           </MenuItem>
-          <UserBlock />
-          <MenuBlock />
+          {!collapsed && <UserBlock />}
+          <div
+            style={{ display: 'flex', alignItems: 'stretch', height: '100%' }}
+          >
+            <CustomScrollBar
+              component={() => (
+                <MenuBlock {...{ selected, setSelected, collapsed }} />
+              )}
+            />
+          </div>
         </Menu>
       </Sidebar>
     </Box>

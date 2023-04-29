@@ -9,7 +9,7 @@ interface IItem {
   title: string;
   to: string;
   icon: any;
-  selected: boolean;
+  selected: string;
   setSelected: any;
 }
 
@@ -17,7 +17,7 @@ const Item: React.FC<IItem> = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme() as InewTheme;
   return (
     <MenuItem
-      active={selected}
+      active={selected === title}
       style={{
         color: theme.palette.additionalColors.grey[100],
       }}
