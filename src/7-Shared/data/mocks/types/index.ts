@@ -19,7 +19,7 @@ export interface ImockDataContactsItem
 
 export type ImockDataContacts = ImockDataContactsItem[];
 
-export interface ImockDateInvoicesItem {
+export interface ImockDataInvoicesItem {
   id: number;
   name: string;
   email: string;
@@ -28,7 +28,7 @@ export interface ImockDateInvoicesItem {
   date: string;
 }
 
-export type ImockDataInvoices = ImockDateInvoicesItem[];
+export type ImockDataInvoices = ImockDataInvoicesItem[];
 
 export interface ImockTransactionsItem {
   txId: string;
