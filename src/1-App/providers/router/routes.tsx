@@ -1,4 +1,5 @@
 import { Navigate } from 'react-router-dom';
+import { Calendar } from '../../../3-Pages/Calendar';
 import { Contacts } from '../../../3-Pages/Contacts';
 import { CreateUser } from '../../../3-Pages/CreateUser';
 import { Dashboard } from '../../../3-Pages/Dashboard';
@@ -16,6 +17,7 @@ export const routes = [
       { path: '/contacts', element: <Contacts /> },
       { path: '/invoices', element: <Invoices /> },
       { path: '/create-user', element: <CreateUser /> },
+      { path: '/calendar', element: <Calendar /> },
     ],
   },
 ];
