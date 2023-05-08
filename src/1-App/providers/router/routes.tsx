@@ -7,6 +7,7 @@ import { Dashboard } from '../../../3-Pages/Dashboard';
 import { Faq } from '../../../3-Pages/Faq';
 import Invoices from '../../../3-Pages/Invoices/ui';
 import { ManageTeam } from '../../../3-Pages/ManageTeam';
+import { PieChart } from '../../../3-Pages/PieChart';
 import { RootPage } from '../../../3-Pages/Root';
 
 export const routes = [
@@ -22,6 +23,7 @@ export const routes = [
       { path: '/calendar', element: <Calendar /> },
       { path: '/faq', element: <Faq /> },
       { path: '/bar', element: <BarChart /> },
+      { path: '/pie', element: <PieChart /> },
     ],
   },
 ];
