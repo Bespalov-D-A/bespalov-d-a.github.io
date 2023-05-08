@@ -3,7 +3,7 @@ import s from './index.module.scss';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { MenuItem } from 'react-pro-sidebar';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { InewTheme } from '../../../../../7-Shared/assets/mui/WithTheme';
 
 interface IItem {
