@@ -73,7 +73,7 @@ const MenuBlock: React.FC<IMenu> = (props) => {
       </Typography>
       <Item
         title="Profile Form"
-        to="/form"
+        to="/create-user"
         icon={<PersonOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
