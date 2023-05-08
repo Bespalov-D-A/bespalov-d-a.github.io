@@ -1,4 +1,5 @@
 import { Navigate } from 'react-router-dom';
+import { BarChart } from '../../../3-Pages/BarChart';
 import { Calendar } from '../../../3-Pages/Calendar';
 import { Contacts } from '../../../3-Pages/Contacts';
 import { CreateUser } from '../../../3-Pages/CreateUser';
@@ -20,6 +21,7 @@ export const routes = [
       { path: '/create-user', element: <CreateUser /> },
       { path: '/calendar', element: <Calendar /> },
       { path: '/faq', element: <Faq /> },
+      { path: '/bar', element: <BarChart /> },
     ],
   },
 ];

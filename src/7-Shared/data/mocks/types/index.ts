@@ -40,6 +40,7 @@ export interface ImockTransactionsItem {
 export type ImockTransactions = ImockTransactionsItem[];
 
 export interface ImockBarDataItem {
+  [key: string]: string | number;
   country: string;
   'hot dog': number;
   'hot dogColor': string;
