@@ -1,5 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { Contacts } from '../../../3-Pages/Contacts';
+import { CreateUser } from '../../../3-Pages/CreateUser';
 import { Dashboard } from '../../../3-Pages/Dashboard';
 import Invoices from '../../../3-Pages/Invoices/ui';
 import { ManageTeam } from '../../../3-Pages/ManageTeam';
@@ -14,6 +15,7 @@ export const routes = [
       { path: '/team', element: <ManageTeam /> },
       { path: '/contacts', element: <Contacts /> },
       { path: '/invoices', element: <Invoices /> },
+      { path: '/create-user', element: <CreateUser /> },
     ],
   },
 ];
