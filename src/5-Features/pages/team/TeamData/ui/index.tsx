@@ -4,7 +4,6 @@ import { DataGrid } from '@mui/x-data-grid/DataGrid';
 import React from 'react';
 import { InewTheme } from '../../../../../7-Shared/assets/mui/WithTheme';
 import { mockDataTeam } from '../../../../../7-Shared/data/mocks/data/text/mockData';
-import { Header } from '../../../../../7-Shared/ui/Header';
 import AccessCell from './AccessCell';
 
 interface ITeamData {}

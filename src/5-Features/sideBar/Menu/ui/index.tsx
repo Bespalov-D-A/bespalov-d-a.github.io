@@ -26,7 +26,7 @@ const MenuBlock: React.FC<IMenu> = (props) => {
   const { collapsed, selected, setSelected } = props;
   const theme = useTheme() as InewTheme;
   return (
-    <Box>
+    <Box pl={!collapsed ? undefined : '10%'}>
       <Item
         title="Dashboard"
         to="/"
