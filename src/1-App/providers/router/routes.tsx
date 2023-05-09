@@ -14,10 +14,10 @@ import { RootPage } from '../../../3-Pages/Root';
 
 export const routes = [
   {
-    path: 'dashboard/',
+    path: '/',
     element: <RootPage />,
     children: [
-      { index: true, element: <Dashboard /> },
+      { path: '/', element: <Dashboard /> },
       { path: 'team/', element: <ManageTeam /> },
       { path: 'contacts/', element: <Contacts /> },
       { path: 'invoices/', element: <Invoices /> },
