@@ -7,13 +7,10 @@ import {
 import App from '../..';
 import { routes } from './routes';
 
-export const router = createHashRouter(
-  [
-    {
-      path: '/',
-      element: App,
-      children: routes as NonIndexRouteObject[],
-    },
-  ],
-  { basename: '/dashboard' }
-);
+export const router = createHashRouter([
+  {
+    path: '/',
+    element: App,
+    children: routes as NonIndexRouteObject[],
+  },
+]);
