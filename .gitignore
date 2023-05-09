@@ -17,13 +17,7 @@
 /coverage
 
 # production
-/build/*
-!gh-pages/
-gh-pages/*
-!gh-pages/index.html
-!gh-pages/static/
-gh-pages/static/**
-!gh-pages/static/**/*
+/build
 
 
 # misc

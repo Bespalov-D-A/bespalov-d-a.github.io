@@ -24,9 +24,9 @@ const CustomScrollBar: React.FC<IScrollBar> = ({ component }) => {
   }
 
   useEffect(() => {
-    let time = setTimeout(() => scrollTo(), 50);
+    let time = setTimeout(() => scrollTo(), 100);
     return () => clearTimeout(time);
-  }, [update]);
+  }, []);
 
   return (
     <Scrollbars

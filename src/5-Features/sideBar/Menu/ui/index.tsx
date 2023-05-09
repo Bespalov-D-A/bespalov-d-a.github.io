@@ -29,7 +29,7 @@ const MenuBlock: React.FC<IMenu> = (props) => {
     <Box pl={!collapsed ? undefined : '10%'}>
       <Item
         title="Dashboard"
-        to="/"
+        to="/dashboard"
         icon={<HomeOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
@@ -44,21 +44,21 @@ const MenuBlock: React.FC<IMenu> = (props) => {
       </Typography>
       <Item
         title="Manage Team"
-        to="/team"
+        to="/dashboard/team"
         icon={<PeopleOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
       />
       <Item
         title="Contacts Information"
-        to="/contacts"
+        to="/dashboard/contacts"
         icon={<ContactsOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
       />
       <Item
         title="Invoices Balances"
-        to="/invoices"
+        to="/dashboard/invoices"
         icon={<ReceiptOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
@@ -73,21 +73,21 @@ const MenuBlock: React.FC<IMenu> = (props) => {
       </Typography>
       <Item
         title="Profile Form"
-        to="/create-user"
+        to="/dashboard/create-user"
         icon={<PersonOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
       />
       <Item
         title="Calendar"
-        to="/calendar"
+        to="/dashboard/calendar"
         icon={<CalendarTodayOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
       />
       <Item
         title="FAQ Page"
-        to="/faq"
+        to="/dashboard/faq"
         icon={<HelpOutlineOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
@@ -102,28 +102,28 @@ const MenuBlock: React.FC<IMenu> = (props) => {
       </Typography>
       <Item
         title="Bar Chart"
-        to="/bar"
+        to="/dashboard/bar"
         icon={<BarChartOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
       />
       <Item
         title="Pie Chart"
-        to="/pie"
+        to="/dashboard/pie"
         icon={<PieChartOutlineOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
       />
       <Item
         title="Line Chart"
-        to="/line"
+        to="/dashboard/line"
         icon={<TimelineOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
       />
       <Item
         title="Geography Chart"
-        to="/geography"
+        to="/dashboard/geography"
         icon={<MapOutlinedIcon />}
         selected={selected}
         setSelected={setSelected}
