@@ -14,20 +14,20 @@ import { RootPage } from '../../../3-Pages/Root';
 
 export const routes = [
   {
-    path: '/',
+    path: 'dashboard/',
     element: <RootPage />,
     children: [
-      { path: '/', element: <Dashboard /> },
-      { path: '/team', element: <ManageTeam /> },
-      { path: '/contacts', element: <Contacts /> },
-      { path: '/invoices', element: <Invoices /> },
-      { path: '/create-user', element: <CreateUser /> },
-      { path: '/calendar', element: <Calendar /> },
-      { path: '/faq', element: <Faq /> },
-      { path: '/bar', element: <BarChart /> },
-      { path: '/pie', element: <PieChart /> },
-      { path: '/line', element: <LineChart /> },
-      { path: '/geography', element: <GeoChart /> },
+      { index: true, element: <Dashboard /> },
+      { path: 'team/', element: <ManageTeam /> },
+      { path: 'contacts/', element: <Contacts /> },
+      { path: 'invoices/', element: <Invoices /> },
+      { path: 'create-user/', element: <CreateUser /> },
+      { path: 'calendar/', element: <Calendar /> },
+      { path: 'faq/', element: <Faq /> },
+      { path: 'bar/', element: <BarChart /> },
+      { path: 'pie/', element: <PieChart /> },
+      { path: 'line/', element: <LineChart /> },
+      { path: 'geography/', element: <GeoChart /> },
     ],
   },
 ];
