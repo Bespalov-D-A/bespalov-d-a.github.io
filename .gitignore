@@ -18,7 +18,12 @@
 
 # production
 /build/*
-!gh-pages/build/
+!gh-pages/
+gh-pages/*
+!gh-pages/index.html
+!gh-pages/static/
+gh-pages/static/**
+!gh-pages/static/**/*
 
 
 # misc
