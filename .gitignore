@@ -18,6 +18,8 @@
 
 # production
 /build
+!gh-pages/build/
+
 
 # misc
 .DS_Store
